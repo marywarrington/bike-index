@@ -16,8 +16,11 @@ $(document).ready(function() {
       $('#location').text(zipcode);
 
       for (i = 0; i < response.bikes.length; i++) {
-
-        $('#testBike').append('<ul><li>Model: ' + response.bikes[i].title + "</li><li>Colors: " + response.bikes[i].frame_colors.join() + '</li><li><img src=\"' + response.bikes[i].thumb + '\" alt=\"a picture of a bike\">' + '</li></ul>');
+        var imgTag = "";
+        if(response.bikes[i].thumb !== null) {
+          imgTag = "<li><img src=\"" + response.bikes[i].thumb + "\" alt='a picture of a bike'></li>";
+        }
+        $('#testBike').append('<ul><li>Model: ' + response.bikes[i].title + "</li><li>Colors: " + response.bikes[i].frame_colors.join() + '</li>' + imgTag + '</ul>');
 
       }
 
