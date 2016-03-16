@@ -17,7 +17,7 @@ $(document).ready(function() {
 
       for (i = 0; i < response.bikes.length; i++) {
 
-        $('#testBike').append('<li>' + response.bikes[i].title + ", " + response.bikes[i].frame_colors.join() + '</li>');
+        $('#testBike').append('<ul><li>Model: ' + response.bikes[i].title + "</li><li>Colors: " + response.bikes[i].frame_colors.join() + '</li><li><img src=\"' + response.bikes[i].thumb + '\" alt=\"a picture of a bike\">' + '</li></ul>');
 
       }
 
